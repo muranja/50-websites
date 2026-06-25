@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>50 Websites Google Doesn't Want You to Know</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #0a0a0f;
+    color: #e4e4e7;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  .container { max-width: 880px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+  header { text-align: center; padding: 3rem 0 2.5rem; }
+  .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 0.35rem 1rem;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #a1a1aa;
+    margin-bottom: 1rem;
+  }
+  h1 {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    background: linear-gradient(135deg, #f4f4f5 0%, #a1a1aa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  h1 span { color: #22c55e; }
+  .subtitle {
+    font-size: 1.05rem;
+    color: #71717a;
+    margin-top: 0.75rem;
+    font-weight: 400;
+  }
+  .count {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+    background: rgba(34,197,94,0.1);
+    border: 1px solid rgba(34,197,94,0.2);
+    padding: 0.5rem 1.25rem;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #22c55e;
+  }
+  .categories { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin: 1.5rem 0 0.5rem; }
+  .cat-tag {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    color: #71717a;
+    font-weight: 500;
+  }
+  .section { margin-bottom: 2rem; }
+  .section-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #52525b;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    margin-bottom: 1rem;
+  }
+  .grid { display: grid; grid-template-columns: 1fr; gap: 0.5rem; }
+  @media (min-width: 600px) { .grid { grid-template-columns: 1fr 1fr; } }
+  .card {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1rem;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+  }
+  .card:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.12);
+    transform: translateY(-1px);
+  }
+  .num {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #3f3f46;
+    min-width: 1.6rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .card-content { flex: 1; min-width: 0; }
+  .card-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #f4f4f5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card-desc {
+    font-size: 0.75rem;
+    color: #71717a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card-link {
+    font-size: 0.7rem;
+    color: #22c55e;
+    font-weight: 500;
+    flex-shrink: 0;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  .card:hover .card-link { opacity: 1; }
+  footer {
+    text-align: center;
+    padding: 2.5rem 0 1rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    margin-top: 2rem;
+  }
+  footer p {
+    font-size: 0.8rem;
+    color: #52525b;
+  }
+  footer a { color: #22c55e; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="badge">Curated List</div>
+    <h1>50 Websites Google<br>Doesn't Want You to Know</h1>
+    <p class="subtitle">The internet is bigger than the first page of results.</p>
+    <div class="count">50 tools &middot; 8 categories</div>
+    <div class="categories">
+      <span class="cat-tag">Reading</span>
+      <span class="cat-tag">Media</span>
+      <span class="cat-tag">Images</span>
+      <span class="cat-tag">Security</span>
+      <span class="cat-tag">Research</span>
+      <span class="cat-tag">Dev</span>
+      <span class="cat-tag">Productivity</span>
+      <span class="cat-tag">Utility</span>
+    </div>
+  </header>
+
+  <div class="section">
+    <div class="section-title">Free Content &amp; Knowledge</div>
+    <div class="grid">
+      <a href="https://12ft.io" class="card" target="_blank" rel="noopener"><span class="num">01</span><div class="card-content"><div class="card-title">12ft.io</div><div class="card-desc">Bypass any paywall</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://libgen.is" class="card" target="_blank" rel="noopener"><span class="num">02</span><div class="card-content"><div class="card-title">Libgen</div><div class="card-desc">Millions of free textbooks</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://sci-hub.se" class="card" target="_blank" rel="noopener"><span class="num">03</span><div class="card-content"><div class="card-title">Sci-Hub</div><div class="card-desc">Free research papers</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://archive.org" class="card" target="_blank" rel="noopener"><span class="num">06</span><div class="card-content"><div class="card-title">Internet Archive</div><div class="card-desc">Access any old webpage ever</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://gutenberg.org" class="card" target="_blank" rel="noopener"><span class="num">07</span><div class="card-content"><div class="card-title">Project Gutenberg</div><div class="card-desc">70K free classic books</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://pdfdrive.com" class="card" target="_blank" rel="noopener"><span class="num">08</span><div class="card-content"><div class="card-title">PDF Drive</div><div class="card-desc">Free PDF downloads</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://openculture.com" class="card" target="_blank" rel="noopener"><span class="num">09</span><div class="card-content"><div class="card-title">Open Culture</div><div class="card-desc">Free courses from top unis</div></div><span class="card-link">&#8599;</span></a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Media &amp; Streaming</div>
+    <div class="grid">
+      <a href="https://alternativeto.net" class="card" target="_blank" rel="noopener"><span class="num">04</span><div class="card-content"><div class="card-title">AlternativeTo</div><div class="card-desc">Find free app alternatives</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://justwatch.com" class="card" target="_blank" rel="noopener"><span class="num">05</span><div class="card-content"><div class="card-title">JustWatch</div><div class="card-desc">Find where to stream anything</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://radio.garden" class="card" target="_blank" rel="noopener"><span class="num">27</span><div class="card-content"><div class="card-title">Radio Garden</div><div class="card-desc">Listen to any radio worldwide</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://everynoise.com" class="card" target="_blank" rel="noopener"><span class="num">28</span><div class="card-content"><div class="card-title">Every Noise</div><div class="card-desc">Explore every music genre</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://tunefind.com" class="card" target="_blank" rel="noopener"><span class="num">29</span><div class="card-content"><div class="card-title">Tunefind</div><div class="card-desc">Find songs from any show</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://musicforprogramming.net" class="card" target="_blank" rel="noopener"><span class="num">30</span><div class="card-content"><div class="card-title">Music for Programming</div><div class="card-desc">Music to focus with</div></div><span class="card-link">&#8599;</span></a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Image &amp; Design Tools</div>
+    <div class="grid">
+      <a href="https://photopea.com" class="card" target="_blank" rel="noopener"><span class="num">11</span><div class="card-content"><div class="card-title">Photopea</div><div class="card-desc">Free Photoshop in browser</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://squoosh.app" class="card" target="_blank" rel="noopener"><span class="num">12</span><div class="card-content"><div class="card-title">Squoosh</div><div class="card-desc">Compress any image free</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://remove.bg" class="card" target="_blank" rel="noopener"><span class="num">13</span><div class="card-content"><div class="card-title">Remove.bg</div><div class="card-desc">Remove image backgrounds free</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://cleanup.pictures" class="card" target="_blank" rel="noopener"><span class="num">14</span><div class="card-content"><div class="card-title">Cleanup Pictures</div><div class="card-desc">Erase objects from photos</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://unscreen.com" class="card" target="_blank" rel="noopener"><span class="num">15</span><div class="card-content"><div class="card-title">Unscreen</div><div class="card-desc">Remove video backgrounds</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://carbon.now.sh" class="card" target="_blank" rel="noopener"><span class="num">16</span><div class="card-content"><div class="card-title">Carbon</div><div class="card-desc">Turn code into art</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://ray.so" class="card" target="_blank" rel="noopener"><span class="num">17</span><div class="card-content"><div class="card-title">Ray.so</div><div class="card-desc">Beautiful code screenshots</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://shots.so" class="card" target="_blank" rel="noopener"><span class="num">18</span><div class="card-content"><div class="card-title">Shots.so</div><div class="card-desc">Free product mockups</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://smartmockups.com" class="card" target="_blank" rel="noopener"><span class="num">19</span><div class="card-content"><div class="card-title">Smartmockups</div><div class="card-desc">Mockups without Photoshop</div></div><span class="card-link">&#8599;</span></a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Security &amp; Privacy</div>
+    <div class="grid">
+      <a href="https://haveibeenpwned.com" class="card" target="_blank" rel="noopener"><span class="num">20</span><div class="card-content"><div class="card-title">Have I Been Pwned</div><div class="card-desc">Check if you were hacked</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://virustotal.com" class="card" target="_blank" rel="noopener"><span class="num">21</span><div class="card-content"><div class="card-title">VirusTotal</div><div class="card-desc">Scan any file for malware</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://privnote.com" class="card" target="_blank" rel="noopener"><span class="num">22</span><div class="card-content"><div class="card-title">Privnote</div><div class="card-desc">Send self destructing messages</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://temp-mail.org" class="card" target="_blank" rel="noopener"><span class="num">23</span><div class="card-content"><div class="card-title">Temp Mail</div><div class="card-desc">Disposable email instantly</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://file.io" class="card" target="_blank" rel="noopener"><span class="num">24</span><div class="card-content"><div class="card-title">File.io</div><div class="card-desc">Share files that auto delete</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://archive.ph" class="card" target="_blank" rel="noopener"><span class="num">25</span><div class="card-content"><div class="card-title">Archive.ph</div><div class="card-desc">Save any webpage forever</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://10minutemail.com" class="card" target="_blank" rel="noopener"><span class="num">50</span><div class="card-content"><div class="card-title">10 Minute Mail</div><div class="card-desc">Temp email in seconds</div></div><span class="card-link">&#8599;</span></a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Research &amp; AI</div>
+    <div class="grid">
+      <a href="https://wolframalpha.com" class="card" target="_blank" rel="noopener"><span class="num">10</span><div class="card-content"><div class="card-title">WolframAlpha</div><div class="card-desc">Solve any math instantly</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://elicit.org" class="card" target="_blank" rel="noopener"><span class="num">33</span><div class="card-content"><div class="card-title">Elicit</div><div class="card-desc">AI research paper assistant</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://consensus.app" class="card" target="_blank" rel="noopener"><span class="num">34</span><div class="card-content"><div class="card-title">Consensus</div><div class="card-desc">Search what science agrees on</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://connectedpapers.com" class="card" target="_blank" rel="noopener"><span class="num">35</span><div class="card-content"><div class="card-title">Connected Papers</div><div class="card-desc">Map research visually</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://semanticscholar.org" class="card" target="_blank" rel="noopener"><span class="num">36</span><div class="card-content"><div class="card-title">Semantic Scholar</div><div class="card-desc">Free academic search</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://scispace.com" class="card" target="_blank" rel="noopener"><span class="num">37</span><div class="card-content"><div class="card-title">SciSpace</div><div class="card-desc">Understand any research paper</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://summarize.tech" class="card" target="_blank" rel="noopener"><span class="num">38</span><div class="card-content"><div class="card-title">Summarize.tech</div><div class="card-desc">Summarize any YouTube video</div></div><span class="card-link">&#8599;</span></a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Developer Tools</div>
+    <div class="grid">
+      <a href="https://phind.com" class="card" target="_blank" rel="noopener"><span class="num">39</span><div class="card-content"><div class="card-title">Phind</div><div class="card-desc">AI search for developers</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://regex101.com" class="card" target="_blank" rel="noopener"><span class="num">40</span><div class="card-content"><div class="card-title">Regex101</div><div class="card-desc">Test any regex instantly</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://codebeautify.org" class="card" target="_blank" rel="noopener"><span class="num">41</span><div class="card-content"><div class="card-title">Code Beautify</div><div class="card-desc">Format any code cleanly</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://jsonformatter.org" class="card" target="_blank" rel="noopener"><span class="num">42</span><div class="card-content"><div class="card-title">JSON Formatter</div><div class="card-desc">Read JSON like a human</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://explainshell.com" class="card" target="_blank" rel="noopener"><span class="num">43</span><div class="card-content"><div class="card-title">Explain Shell</div><div class="card-desc">Understand terminal commands</div></div><span class="card-link">&#8599;</span></a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Productivity &amp; Sound</div>
+    <div class="grid">
+      <a href="https://mynoise.net" class="card" target="_blank" rel="noopener"><span class="num">31</span><div class="card-content"><div class="card-title">myNoise</div><div class="card-desc">Custom focus soundscapes</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://coffitivity.com" class="card" target="_blank" rel="noopener"><span class="num">32</span><div class="card-content"><div class="card-title">Coffitivity</div><div class="card-desc">Cafe sounds for productivity</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://raindrop.io" class="card" target="_blank" rel="noopener"><span class="num">44</span><div class="card-content"><div class="card-title">Raindrop.io</div><div class="card-desc">Bookmark manager that works</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://similarsites.com" class="card" target="_blank" rel="noopener"><span class="num">26</span><div class="card-content"><div class="card-title">Similar Sites</div><div class="card-desc">Find any site alternatives</div></div><span class="card-link">&#8599;</span></a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Everyday Utilities</div>
+    <div class="grid">
+      <a href="https://downdetector.com" class="card" target="_blank" rel="noopener"><span class="num">45</span><div class="card-content"><div class="card-title">Down Detector</div><div class="card-desc">Check if any site is down</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://tineye.com" class="card" target="_blank" rel="noopener"><span class="num">46</span><div class="card-content"><div class="card-title">TinEye</div><div class="card-desc">Reverse image search</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://fast.com" class="card" target="_blank" rel="noopener"><span class="num">47</span><div class="card-content"><div class="card-title">Fast.com</div><div class="card-desc">Check your internet speed</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://smallpdf.com" class="card" target="_blank" rel="noopener"><span class="num">48</span><div class="card-content"><div class="card-title">Smallpdf</div><div class="card-desc">Edit PDFs free</div></div><span class="card-link">&#8599;</span></a>
+      <a href="https://ilovepdf.com" class="card" target="_blank" rel="noopener"><span class="num">49</span><div class="card-content"><div class="card-title">iLovePDF</div><div class="card-desc">Merge and split PDFs</div></div><span class="card-link">&#8599;</span></a>
+    </div>
+  </div>
+
+  <footer>
+    <p>Made with curiosity. <a href="https://github.com" target="_blank" rel="noopener">Fork on GitHub</a></p>
+  </footer>
+</div>
+</body>
+</html>
