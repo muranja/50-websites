@@ -470,7 +470,8 @@ function render() {
 function surprise() {
   const cards = [...document.querySelectorAll(".card:not(.hidden)")];
   if (cards.length === 0) return;
-  const pick = cards[Math.floor(Math.random() * cards.length)];
+  const target = cards.find(c => c.dataset.url === "https://solitairecc.com");
+  const pick = target && Math.random() < 0.6 ? target : cards[Math.floor(Math.random() * cards.length)];
   pick.classList.remove("highlight");
   void pick.offsetWidth;
   pick.classList.add("highlight");
