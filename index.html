@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>50 Websites Google Doesn't Want You to Know</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: 'Inter', -apple-system, sans-serif;
@@ -15,14 +15,15 @@
     min-height: 100vh;
   }
   .container { max-width: 880px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
-  header { text-align: center; padding: 3rem 0 2.5rem; }
+
+  header { text-align: center; padding: 3rem 0 2rem; }
   .badge {
     display: inline-block;
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.08);
     padding: 0.35rem 1rem;
     border-radius: 100px;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;
@@ -39,7 +40,6 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  h1 span { color: #22c55e; }
   .subtitle {
     font-size: 1.05rem;
     color: #71717a;
@@ -59,53 +59,153 @@
     font-weight: 600;
     color: #22c55e;
   }
-  .categories { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin: 1.5rem 0 0.5rem; }
-  .cat-tag {
-    font-size: 0.7rem;
-    padding: 0.25rem 0.75rem;
-    border-radius: 100px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.06);
-    color: #71717a;
-    font-weight: 500;
+
+  .controls {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0 1.5rem;
   }
-  .section { margin-bottom: 2rem; }
-  .section-title {
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+  @media (min-width: 600px) {
+    .controls { flex-direction: row; align-items: center; }
+  }
+  .search-wrap {
+    position: relative;
+    flex: 1;
+  }
+  .search-wrap svg {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
     color: #52525b;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    margin-bottom: 1rem;
+    pointer-events: none;
   }
+  .search-wrap input {
+    width: 100%;
+    padding: 0.7rem 1rem 0.7rem 2.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.03);
+    color: #e4e4e7;
+    font-size: 0.85rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .search-wrap input:focus {
+    border-color: rgba(34,197,94,0.4);
+    background: rgba(255,255,255,0.05);
+  }
+  .search-wrap input::placeholder { color: #52525b; }
+
+  .filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-items: center;
+  }
+  .surprise-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.5rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.03);
+    color: #a1a1aa;
+    font-size: 0.75rem;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .surprise-btn:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(255,255,255,0.15);
+    color: #f4f4f5;
+  }
+
+  .cat-pill {
+    padding: 0.35rem 0.8rem;
+    border-radius: 100px;
+    border: 1px solid rgba(255,255,255,0.06);
+    background: transparent;
+    color: #71717a;
+    font-size: 0.7rem;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .cat-pill:hover {
+    background: rgba(255,255,255,0.05);
+    color: #a1a1aa;
+  }
+  .cat-pill.active {
+    background: rgba(34,197,94,0.12);
+    border-color: rgba(34,197,94,0.3);
+    color: #22c55e;
+  }
+
+  .result-count {
+    font-size: 0.75rem;
+    color: #52525b;
+    padding: 0 0.25rem;
+  }
+
   .grid { display: grid; grid-template-columns: 1fr; gap: 0.5rem; }
   @media (min-width: 600px) { .grid { grid-template-columns: 1fr 1fr; } }
+
   .card {
     display: flex;
     align-items: center;
     gap: 0.75rem;
     padding: 0.85rem 1rem;
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.06);
     border-radius: 10px;
     text-decoration: none;
     color: inherit;
+    border: 1px solid rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.02);
     transition: all 0.2s ease;
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+    cursor: pointer;
+    position: relative;
   }
+  .card.hidden { display: none; }
   .card:hover {
     background: rgba(255,255,255,0.05);
     border-color: rgba(255,255,255,0.12);
     transform: translateY(-1px);
   }
+  .card.highlight {
+    animation: glowPulse 1s ease;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes glowPulse {
+    0%, 100% { border-color: rgba(255,255,255,0.06); box-shadow: none; }
+    30% { border-color: #22c55e; box-shadow: 0 0 20px rgba(34,197,94,0.15); }
+    70% { border-color: #22c55e; box-shadow: 0 0 20px rgba(34,197,94,0.15); }
+  }
+
   .num {
     font-size: 0.75rem;
     font-weight: 700;
     color: #3f3f46;
     min-width: 1.6rem;
     font-variant-numeric: tabular-nums;
+    transition: color 0.2s;
   }
+  .card:hover .num { color: #52525b; }
+
   .card-content { flex: 1; min-width: 0; }
   .card-title {
     font-size: 0.85rem;
@@ -127,20 +227,52 @@
     color: #22c55e;
     font-weight: 500;
     flex-shrink: 0;
-    opacity: 0.7;
+    opacity: 0.5;
     transition: opacity 0.2s;
   }
   .card:hover .card-link { opacity: 1; }
+
+  .toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: rgba(39,39,42,0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 0.65rem 1.25rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    color: #d4d4d8;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 100;
+    white-space: nowrap;
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  .toast strong { color: #22c55e; }
+
+  .empty-state {
+    text-align: center;
+    padding: 4rem 1rem;
+    color: #52525b;
+    display: none;
+  }
+  .empty-state.show { display: block; }
+  .empty-state p { font-size: 0.9rem; }
+  .empty-state svg { width: 48px; height: 48px; margin-bottom: 1rem; opacity: 0.3; }
+
   footer {
     text-align: center;
     padding: 2.5rem 0 1rem;
     border-top: 1px solid rgba(255,255,255,0.06);
     margin-top: 2rem;
   }
-  footer p {
-    font-size: 0.8rem;
-    color: #52525b;
-  }
+  footer p { font-size: 0.8rem; color: #52525b; }
   footer a { color: #22c55e; text-decoration: none; }
 </style>
 </head>
@@ -150,121 +282,209 @@
     <div class="badge">Curated List</div>
     <h1>50 Websites Google<br>Doesn't Want You to Know</h1>
     <p class="subtitle">The internet is bigger than the first page of results.</p>
-    <div class="count">51 tools &middot; 8 categories</div>
-    <div class="categories">
-      <span class="cat-tag">Reading</span>
-      <span class="cat-tag">Media</span>
-      <span class="cat-tag">Images</span>
-      <span class="cat-tag">Security</span>
-      <span class="cat-tag">Research</span>
-      <span class="cat-tag">Dev</span>
-      <span class="cat-tag">Productivity</span>
-      <span class="cat-tag">Utility</span>
-    </div>
+    <div class="count" id="totalBadge">51 tools &middot; 8 categories</div>
   </header>
 
-  <div class="section">
-    <div class="section-title">Free Content &amp; Knowledge</div>
-    <div class="grid">
-      <a href="https://12ft.io" class="card" target="_blank" rel="noopener"><span class="num">01</span><div class="card-content"><div class="card-title">12ft.io</div><div class="card-desc">Bypass any paywall</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://libgen.is" class="card" target="_blank" rel="noopener"><span class="num">02</span><div class="card-content"><div class="card-title">Libgen</div><div class="card-desc">Millions of free textbooks</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://sci-hub.se" class="card" target="_blank" rel="noopener"><span class="num">03</span><div class="card-content"><div class="card-title">Sci-Hub</div><div class="card-desc">Free research papers</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://archive.org" class="card" target="_blank" rel="noopener"><span class="num">06</span><div class="card-content"><div class="card-title">Internet Archive</div><div class="card-desc">Access any old webpage ever</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://gutenberg.org" class="card" target="_blank" rel="noopener"><span class="num">07</span><div class="card-content"><div class="card-title">Project Gutenberg</div><div class="card-desc">70K free classic books</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://pdfdrive.com" class="card" target="_blank" rel="noopener"><span class="num">08</span><div class="card-content"><div class="card-title">PDF Drive</div><div class="card-desc">Free PDF downloads</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://openculture.com" class="card" target="_blank" rel="noopener"><span class="num">09</span><div class="card-content"><div class="card-title">Open Culture</div><div class="card-desc">Free courses from top unis</div></div><span class="card-link">&#8599;</span></a>
+  <div class="controls">
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="searchInput" placeholder="Search sites..." autocomplete="off">
     </div>
+    <button class="surprise-btn" id="surpriseBtn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4c0 2-2 4-4 4a4 4 0 0 1-4-4c0-2 2-4 4-4Z"/><path d="M12 14c4 0 8 1.5 8 4v2H4v-2c0-2.5 4-4 8-4Z"/></svg>
+      Surprise Me
+    </button>
   </div>
 
-  <div class="section">
-    <div class="section-title">Media &amp; Streaming</div>
-    <div class="grid">
-      <a href="https://alternativeto.net" class="card" target="_blank" rel="noopener"><span class="num">04</span><div class="card-content"><div class="card-title">AlternativeTo</div><div class="card-desc">Find free app alternatives</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://justwatch.com" class="card" target="_blank" rel="noopener"><span class="num">05</span><div class="card-content"><div class="card-title">JustWatch</div><div class="card-desc">Find where to stream anything</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://radio.garden" class="card" target="_blank" rel="noopener"><span class="num">27</span><div class="card-content"><div class="card-title">Radio Garden</div><div class="card-desc">Listen to any radio worldwide</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://everynoise.com" class="card" target="_blank" rel="noopener"><span class="num">28</span><div class="card-content"><div class="card-title">Every Noise</div><div class="card-desc">Explore every music genre</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://tunefind.com" class="card" target="_blank" rel="noopener"><span class="num">29</span><div class="card-content"><div class="card-title">Tunefind</div><div class="card-desc">Find songs from any show</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://musicforprogramming.net" class="card" target="_blank" rel="noopener"><span class="num">30</span><div class="card-content"><div class="card-title">Music for Programming</div><div class="card-desc">Music to focus with</div></div><span class="card-link">&#8599;</span></a>
-    </div>
+  <div class="filter-row" id="filterRow">
+    <span class="result-count" id="resultCount">Showing 51</span>
   </div>
 
-  <div class="section">
-    <div class="section-title">Image &amp; Design Tools</div>
-    <div class="grid">
-      <a href="https://photopea.com" class="card" target="_blank" rel="noopener"><span class="num">11</span><div class="card-content"><div class="card-title">Photopea</div><div class="card-desc">Free Photoshop in browser</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://squoosh.app" class="card" target="_blank" rel="noopener"><span class="num">12</span><div class="card-content"><div class="card-title">Squoosh</div><div class="card-desc">Compress any image free</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://remove.bg" class="card" target="_blank" rel="noopener"><span class="num">13</span><div class="card-content"><div class="card-title">Remove.bg</div><div class="card-desc">Remove image backgrounds free</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://cleanup.pictures" class="card" target="_blank" rel="noopener"><span class="num">14</span><div class="card-content"><div class="card-title">Cleanup Pictures</div><div class="card-desc">Erase objects from photos</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://unscreen.com" class="card" target="_blank" rel="noopener"><span class="num">15</span><div class="card-content"><div class="card-title">Unscreen</div><div class="card-desc">Remove video backgrounds</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://carbon.now.sh" class="card" target="_blank" rel="noopener"><span class="num">16</span><div class="card-content"><div class="card-title">Carbon</div><div class="card-desc">Turn code into art</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://ray.so" class="card" target="_blank" rel="noopener"><span class="num">17</span><div class="card-content"><div class="card-title">Ray.so</div><div class="card-desc">Beautiful code screenshots</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://shots.so" class="card" target="_blank" rel="noopener"><span class="num">18</span><div class="card-content"><div class="card-title">Shots.so</div><div class="card-desc">Free product mockups</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://smartmockups.com" class="card" target="_blank" rel="noopener"><span class="num">19</span><div class="card-content"><div class="card-title">Smartmockups</div><div class="card-desc">Mockups without Photoshop</div></div><span class="card-link">&#8599;</span></a>
-    </div>
-  </div>
+  <div class="grid" id="grid"></div>
 
-  <div class="section">
-    <div class="section-title">Security &amp; Privacy</div>
-    <div class="grid">
-      <a href="https://haveibeenpwned.com" class="card" target="_blank" rel="noopener"><span class="num">20</span><div class="card-content"><div class="card-title">Have I Been Pwned</div><div class="card-desc">Check if you were hacked</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://virustotal.com" class="card" target="_blank" rel="noopener"><span class="num">21</span><div class="card-content"><div class="card-title">VirusTotal</div><div class="card-desc">Scan any file for malware</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://privnote.com" class="card" target="_blank" rel="noopener"><span class="num">22</span><div class="card-content"><div class="card-title">Privnote</div><div class="card-desc">Send self destructing messages</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://temp-mail.org" class="card" target="_blank" rel="noopener"><span class="num">23</span><div class="card-content"><div class="card-title">Temp Mail</div><div class="card-desc">Disposable email instantly</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://file.io" class="card" target="_blank" rel="noopener"><span class="num">24</span><div class="card-content"><div class="card-title">File.io</div><div class="card-desc">Share files that auto delete</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://archive.ph" class="card" target="_blank" rel="noopener"><span class="num">25</span><div class="card-content"><div class="card-title">Archive.ph</div><div class="card-desc">Save any webpage forever</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://10minutemail.com" class="card" target="_blank" rel="noopener"><span class="num">50</span><div class="card-content"><div class="card-title">10 Minute Mail</div><div class="card-desc">Temp email in seconds</div></div><span class="card-link">&#8599;</span></a>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">Research &amp; AI</div>
-    <div class="grid">
-      <a href="https://wolframalpha.com" class="card" target="_blank" rel="noopener"><span class="num">10</span><div class="card-content"><div class="card-title">WolframAlpha</div><div class="card-desc">Solve any math instantly</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://elicit.org" class="card" target="_blank" rel="noopener"><span class="num">33</span><div class="card-content"><div class="card-title">Elicit</div><div class="card-desc">AI research paper assistant</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://consensus.app" class="card" target="_blank" rel="noopener"><span class="num">34</span><div class="card-content"><div class="card-title">Consensus</div><div class="card-desc">Search what science agrees on</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://connectedpapers.com" class="card" target="_blank" rel="noopener"><span class="num">35</span><div class="card-content"><div class="card-title">Connected Papers</div><div class="card-desc">Map research visually</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://semanticscholar.org" class="card" target="_blank" rel="noopener"><span class="num">36</span><div class="card-content"><div class="card-title">Semantic Scholar</div><div class="card-desc">Free academic search</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://scispace.com" class="card" target="_blank" rel="noopener"><span class="num">37</span><div class="card-content"><div class="card-title">SciSpace</div><div class="card-desc">Understand any research paper</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://summarize.tech" class="card" target="_blank" rel="noopener"><span class="num">38</span><div class="card-content"><div class="card-title">Summarize.tech</div><div class="card-desc">Summarize any YouTube video</div></div><span class="card-link">&#8599;</span></a>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">Developer Tools</div>
-    <div class="grid">
-      <a href="https://phind.com" class="card" target="_blank" rel="noopener"><span class="num">39</span><div class="card-content"><div class="card-title">Phind</div><div class="card-desc">AI search for developers</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://regex101.com" class="card" target="_blank" rel="noopener"><span class="num">40</span><div class="card-content"><div class="card-title">Regex101</div><div class="card-desc">Test any regex instantly</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://codebeautify.org" class="card" target="_blank" rel="noopener"><span class="num">41</span><div class="card-content"><div class="card-title">Code Beautify</div><div class="card-desc">Format any code cleanly</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://jsonformatter.org" class="card" target="_blank" rel="noopener"><span class="num">42</span><div class="card-content"><div class="card-title">JSON Formatter</div><div class="card-desc">Read JSON like a human</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://explainshell.com" class="card" target="_blank" rel="noopener"><span class="num">43</span><div class="card-content"><div class="card-title">Explain Shell</div><div class="card-desc">Understand terminal commands</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://bbycroft.net/llm" class="card" target="_blank" rel="noopener"><span class="num">51</span><div class="card-content"><div class="card-title">BbyCraft LLM Viz</div><div class="card-desc">Visualize how LLMs work internally</div></div><span class="card-link">&#8599;</span></a>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">Productivity &amp; Sound</div>
-    <div class="grid">
-      <a href="https://mynoise.net" class="card" target="_blank" rel="noopener"><span class="num">31</span><div class="card-content"><div class="card-title">myNoise</div><div class="card-desc">Custom focus soundscapes</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://coffitivity.com" class="card" target="_blank" rel="noopener"><span class="num">32</span><div class="card-content"><div class="card-title">Coffitivity</div><div class="card-desc">Cafe sounds for productivity</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://raindrop.io" class="card" target="_blank" rel="noopener"><span class="num">44</span><div class="card-content"><div class="card-title">Raindrop.io</div><div class="card-desc">Bookmark manager that works</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://similarsites.com" class="card" target="_blank" rel="noopener"><span class="num">26</span><div class="card-content"><div class="card-title">Similar Sites</div><div class="card-desc">Find any site alternatives</div></div><span class="card-link">&#8599;</span></a>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">Everyday Utilities</div>
-    <div class="grid">
-      <a href="https://downdetector.com" class="card" target="_blank" rel="noopener"><span class="num">45</span><div class="card-content"><div class="card-title">Down Detector</div><div class="card-desc">Check if any site is down</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://tineye.com" class="card" target="_blank" rel="noopener"><span class="num">46</span><div class="card-content"><div class="card-title">TinEye</div><div class="card-desc">Reverse image search</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://fast.com" class="card" target="_blank" rel="noopener"><span class="num">47</span><div class="card-content"><div class="card-title">Fast.com</div><div class="card-desc">Check your internet speed</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://smallpdf.com" class="card" target="_blank" rel="noopener"><span class="num">48</span><div class="card-content"><div class="card-title">Smallpdf</div><div class="card-desc">Edit PDFs free</div></div><span class="card-link">&#8599;</span></a>
-      <a href="https://ilovepdf.com" class="card" target="_blank" rel="noopener"><span class="num">49</span><div class="card-content"><div class="card-title">iLovePDF</div><div class="card-desc">Merge and split PDFs</div></div><span class="card-link">&#8599;</span></a>
-    </div>
+  <div class="empty-state" id="emptyState">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <p>No sites match your search</p>
   </div>
 
   <footer>
-    <p>Made with curiosity. <a href="https://github.com" target="_blank" rel="noopener">Fork on GitHub</a></p>
+    <p>Made with curiosity. <a href="https://github.com/muranja/50-websites" target="_blank" rel="noopener">Fork on GitHub</a></p>
   </footer>
 </div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const sites = [
+  { n:"01", t:"12ft.io", u:"https://12ft.io", d:"Bypass any paywall", c:"reading" },
+  { n:"02", t:"Libgen", u:"https://libgen.is", d:"Millions of free textbooks", c:"reading" },
+  { n:"03", t:"Sci-Hub", u:"https://sci-hub.se", d:"Free research papers", c:"reading" },
+  { n:"06", t:"Internet Archive", u:"https://archive.org", d:"Access any old webpage ever", c:"reading" },
+  { n:"07", t:"Project Gutenberg", u:"https://gutenberg.org", d:"70K free classic books", c:"reading" },
+  { n:"08", t:"PDF Drive", u:"https://pdfdrive.com", d:"Free PDF downloads", c:"reading" },
+  { n:"09", t:"Open Culture", u:"https://openculture.com", d:"Free courses from top unis", c:"reading" },
+  { n:"04", t:"AlternativeTo", u:"https://alternativeto.net", d:"Find free app alternatives", c:"media" },
+  { n:"05", t:"JustWatch", u:"https://justwatch.com", d:"Find where to stream anything", c:"media" },
+  { n:"27", t:"Radio Garden", u:"https://radio.garden", d:"Listen to any radio worldwide", c:"media" },
+  { n:"28", t:"Every Noise", u:"https://everynoise.com", d:"Explore every music genre", c:"media" },
+  { n:"29", t:"Tunefind", u:"https://tunefind.com", d:"Find songs from any show", c:"media" },
+  { n:"30", t:"Music for Programming", u:"https://musicforprogramming.net", d:"Music to focus with", c:"media" },
+  { n:"11", t:"Photopea", u:"https://photopea.com", d:"Free Photoshop in browser", c:"images" },
+  { n:"12", t:"Squoosh", u:"https://squoosh.app", d:"Compress any image free", c:"images" },
+  { n:"13", t:"Remove.bg", u:"https://remove.bg", d:"Remove image backgrounds free", c:"images" },
+  { n:"14", t:"Cleanup Pictures", u:"https://cleanup.pictures", d:"Erase objects from photos", c:"images" },
+  { n:"15", t:"Unscreen", u:"https://unscreen.com", d:"Remove video backgrounds", c:"images" },
+  { n:"16", t:"Carbon", u:"https://carbon.now.sh", d:"Turn code into art", c:"images" },
+  { n:"17", t:"Ray.so", u:"https://ray.so", d:"Beautiful code screenshots", c:"images" },
+  { n:"18", t:"Shots.so", u:"https://shots.so", d:"Free product mockups", c:"images" },
+  { n:"19", t:"Smartmockups", u:"https://smartmockups.com", d:"Mockups without Photoshop", c:"images" },
+  { n:"20", t:"Have I Been Pwned", u:"https://haveibeenpwned.com", d:"Check if you were hacked", c:"security" },
+  { n:"21", t:"VirusTotal", u:"https://virustotal.com", d:"Scan any file for malware", c:"security" },
+  { n:"22", t:"Privnote", u:"https://privnote.com", d:"Send self destructing messages", c:"security" },
+  { n:"23", t:"Temp Mail", u:"https://temp-mail.org", d:"Disposable email instantly", c:"security" },
+  { n:"24", t:"File.io", u:"https://file.io", d:"Share files that auto delete", c:"security" },
+  { n:"25", t:"Archive.ph", u:"https://archive.ph", d:"Save any webpage forever", c:"security" },
+  { n:"50", t:"10 Minute Mail", u:"https://10minutemail.com", d:"Temp email in seconds", c:"security" },
+  { n:"10", t:"WolframAlpha", u:"https://wolframalpha.com", d:"Solve any math instantly", c:"research" },
+  { n:"33", t:"Elicit", u:"https://elicit.org", d:"AI research paper assistant", c:"research" },
+  { n:"34", t:"Consensus", u:"https://consensus.app", d:"Search what science agrees on", c:"research" },
+  { n:"35", t:"Connected Papers", u:"https://connectedpapers.com", d:"Map research visually", c:"research" },
+  { n:"36", t:"Semantic Scholar", u:"https://semanticscholar.org", d:"Free academic search", c:"research" },
+  { n:"37", t:"SciSpace", u:"https://scispace.com", d:"Understand any research paper", c:"research" },
+  { n:"38", t:"Summarize.tech", u:"https://summarize.tech", d:"Summarize any YouTube video", c:"research" },
+  { n:"39", t:"Phind", u:"https://phind.com", d:"AI search for developers", c:"dev" },
+  { n:"40", t:"Regex101", u:"https://regex101.com", d:"Test any regex instantly", c:"dev" },
+  { n:"41", t:"Code Beautify", u:"https://codebeautify.org", d:"Format any code cleanly", c:"dev" },
+  { n:"42", t:"JSON Formatter", u:"https://jsonformatter.org", d:"Read JSON like a human", c:"dev" },
+  { n:"43", t:"Explain Shell", u:"https://explainshell.com", d:"Understand terminal commands", c:"dev" },
+  { n:"51", t:"BbyCraft LLM Viz", u:"https://bbycroft.net/llm", d:"Visualize how LLMs work internally", c:"dev" },
+  { n:"31", t:"myNoise", u:"https://mynoise.net", d:"Custom focus soundscapes", c:"productivity" },
+  { n:"32", t:"Coffitivity", u:"https://coffitivity.com", d:"Cafe sounds for productivity", c:"productivity" },
+  { n:"44", t:"Raindrop.io", u:"https://raindrop.io", d:"Bookmark manager that works", c:"productivity" },
+  { n:"26", t:"Similar Sites", u:"https://similarsites.com", d:"Find any site alternatives", c:"productivity" },
+  { n:"45", t:"Down Detector", u:"https://downdetector.com", d:"Check if any site is down", c:"utility" },
+  { n:"46", t:"TinEye", u:"https://tineye.com", d:"Reverse image search", c:"utility" },
+  { n:"47", t:"Fast.com", u:"https://fast.com", d:"Check your internet speed", c:"utility" },
+  { n:"48", t:"Smallpdf", u:"https://smallpdf.com", d:"Edit PDFs free", c:"utility" },
+  { n:"49", t:"iLovePDF", u:"https://ilovepdf.com", d:"Merge and split PDFs", c:"utility" }
+];
+
+const catMeta = {
+  reading: "Free Content",
+  media: "Media & Streaming",
+  images: "Image & Design",
+  security: "Security & Privacy",
+  research: "Research & AI",
+  dev: "Developer Tools",
+  productivity: "Productivity & Sound",
+  utility: "Everyday Utilities"
+};
+
+let activeCat = null;
+let searchTerm = "";
+
+const grid = document.getElementById("grid");
+const searchInput = document.getElementById("searchInput");
+const filterRow = document.getElementById("filterRow");
+const resultCount = document.getElementById("resultCount");
+const emptyState = document.getElementById("emptyState");
+const toast = document.getElementById("toast");
+const surpriseBtn = document.getElementById("surpriseBtn");
+
+let toastTimer = null;
+function showToast(msg) {
+  clearTimeout(toastTimer);
+  toast.innerHTML = msg;
+  toast.classList.add("show");
+  toastTimer = setTimeout(() => toast.classList.remove("show"), 2000);
+}
+
+function buildCatPills() {
+  const cats = Object.entries(catMeta);
+  cats.forEach(([key, label]) => {
+    const btn = document.createElement("button");
+    btn.className = "cat-pill";
+    btn.dataset.cat = key;
+    btn.textContent = label;
+    btn.addEventListener("click", () => {
+      if (activeCat === key) {
+        activeCat = null;
+        btn.classList.remove("active");
+      } else {
+        document.querySelectorAll(".cat-pill").forEach(b => b.classList.remove("active"));
+        activeCat = key;
+        btn.classList.add("active");
+      }
+      render();
+    });
+    filterRow.appendChild(btn);
+  });
+}
+
+function render() {
+  const filtered = sites.filter(s => {
+    if (activeCat && s.c !== activeCat) return false;
+    if (searchTerm) {
+      const q = searchTerm.toLowerCase();
+      if (!s.t.toLowerCase().includes(q) && !s.d.toLowerCase().includes(q) && !s.u.toLowerCase().includes(q)) return false;
+    }
+    return true;
+  });
+
+  if (filtered.length === 0) {
+    emptyState.classList.add("show");
+  } else {
+    emptyState.classList.remove("show");
+  }
+
+  resultCount.textContent = `Showing ${filtered.length}`;
+
+  let html = "";
+  filtered.forEach(s => {
+    html += `<a href="${s.u}" class="card" target="_blank" rel="noopener" data-num="${s.n}" data-title="${s.t}" data-url="${s.u}" data-desc="${s.d}">
+      <span class="num">${s.n}</span>
+      <div class="card-content">
+        <div class="card-title">${s.t}</div>
+        <div class="card-desc">${s.d}</div>
+      </div>
+      <span class="card-link">&#8599;</span>
+    </a>`;
+  });
+  grid.innerHTML = html;
+
+  document.querySelectorAll(".card").forEach(el => {
+    el.addEventListener("click", e => {
+      const url = el.dataset.url;
+      const title = el.dataset.title;
+      e.preventDefault();
+      navigator.clipboard.writeText(url).then(() => {
+        showToast(`Copied <strong>${title}</strong> to clipboard`);
+      }).catch(() => {
+        window.open(url, "_blank", "noopener");
+      });
+    });
+  });
+}
+
+function surprise() {
+  const cards = [...document.querySelectorAll(".card:not(.hidden)")];
+  if (cards.length === 0) return;
+  const pick = cards[Math.floor(Math.random() * cards.length)];
+  pick.classList.remove("highlight");
+  void pick.offsetWidth;
+  pick.classList.add("highlight");
+  pick.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+searchInput.addEventListener("input", () => {
+  searchTerm = searchInput.value;
+  render();
+});
+
+surpriseBtn.addEventListener("click", surprise);
+
+buildCatPills();
+render();
+</script>
 </body>
 </html>
