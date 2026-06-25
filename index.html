@@ -476,6 +476,7 @@ function surprise() {
   void pick.offsetWidth;
   pick.classList.add("highlight");
   pick.scrollIntoView({ behavior: "smooth", block: "center" });
+  setTimeout(() => window.open(pick.dataset.url, "_blank", "noopener"), 500);
 }
 
 searchInput.addEventListener("input", () => {
