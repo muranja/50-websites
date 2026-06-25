@@ -1,18 +1,16 @@
 # 50 Websites Google Doesn't Want You to Know
 
-A clean directory of 50 powerful websites most people never discover.
+cyber-themed interactive directory of powerful web tools.
 
-## Deploy to GitHub Pages
+- 52 sites across 8 categories
+- live search, category filter, weighted random picker
+- copy-to-clipboard on click
 
-1. Create a new repo on GitHub (e.g. `50-websites`)
-2. Run:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git remote add origin https://github.com/YOUR_USERNAME/50-websites.git
-   git branch -M main
-   git push -u origin main
-   ```
-3. Go to repo Settings > Pages > Deploy from branch `main` / `/ (root)`
-4. Your site will be live at `https://YOUR_USERNAME.github.io/50-websites`
+## stack
+
+vanilla html/css/js — zero dependencies, one file.
+
+## links
+
+- site: https://muranja.github.io/50-websites
+- repo: https://github.com/muranja/50-websites
